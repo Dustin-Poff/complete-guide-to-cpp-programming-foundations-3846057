@@ -8,5 +8,5 @@ int main()
     std::cout << "HELLO WORLD!" << std::endl;
 
     std::cout << std::endl << std::endl;
-    return 1;
+    return 0;
 }
