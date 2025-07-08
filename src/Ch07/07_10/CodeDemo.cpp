@@ -10,6 +10,37 @@
 
 class Person{
     // Write your code here
+    public:
+        Person(const std::string& name_i, float energy_i, float happiness_i, float health_i): name(name_i), energy(energy_i), happiness(happiness_i), health(health_i){};
+
+        void Eat(float Calories)
+        {
+            energy = std::min(100.0f, std::max(0.0f, energy += ((Calories * 7.0) / 200.0)));
+        }
+        
+        void Play(float minutes)
+        {
+            happiness = std::min(100.0f, std::max(0.0f, happiness += minutes / 2.0));
+            energy = std::min(100.0f, std::max(0.0f, energy -= minutes / 3.0));
+        }
+
+        void Sleep(float hours)
+        {
+            energy = std::min(100.0f, std::max(0.0f, energy += hours * 3.75));
+            health = std::min(100.0f, std::max(0.0f, health += hours * 2.5));
+        }
+
+        float GetEnergy() const{ return energy;}
+
+        float GetHappiness() const{ return happiness;}
+
+        float GetHealth() const{ return health;}
+
+    private:
+        std::string name;
+        float energy;
+        float happiness;
+        float health;
 };
 
 int main(){
