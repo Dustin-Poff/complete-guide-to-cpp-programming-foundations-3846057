@@ -25,8 +25,38 @@ enum class Operation{
 
 deque<pair<string, int>> ManagePetSchedule(const deque<pair<string, int>>& initialActivities, const vector<pair<Operation, pair<string, int>>>& operations){
     deque<pair<string, int>> schedule;
+    schedule = initialActivities;
 
     // Write your code here.
+    for (const auto& x : operations)
+    {
+        switch (x.first)
+        {
+            case Operation::ADD_FRONT:
+                /* code */
+                schedule.push_front(x.second);
+                break;
+            
+            case Operation::ADD_BACK:
+                /* code */
+                schedule.push_back(x.second);
+                break;
+            
+            case Operation::REMOVE_FRONT:
+                /* code */
+                schedule.pop_front();
+                break;
+            
+            case Operation::REMOVE_BACK:
+                /* code */
+                schedule.pop_back();
+                break;
+            
+            default:
+                break;
+        }
+
+    }
 
     return schedule;
 }
